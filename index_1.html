@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Incode Workforce — Stop Identity Fraud at Every Stage</title>
+  <meta name="description" content="Biometric identity verification across hiring, onboarding, and IT. Stop deepfakes. Works inside Okta, Workday and Entra."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <style>
+    :root{--bg:#06050D;--surface:#0E0D1A;--card:#131221;--border:rgba(255,255,255,0.08);--blue:#006AFF;--blue2:#0050CC;--grad:linear-gradient(135deg,#006AFF,#0050CC);--text:#F3F2FF;--muted:#9490B5;--dim:#58547A;--font:'Plus Jakarta Sans',sans-serif;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{background:var(--bg);color:var(--text);font-family:var(--font);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+    a{color:inherit;text-decoration:none;}
+    body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;background-image:linear-gradient(rgba(0,106,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(0,106,255,.04) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 80% 50% at 50% 0%,black 20%,transparent 100%);}
+    body>*{position:relative;z-index:1;}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:0 5vw;height:60px;border-bottom:1px solid var(--border);background:rgba(6,5,13,.88);backdrop-filter:blur(16px);}
+    .nav-brand{display:flex;align-items:center;gap:9px;font-size:.9rem;font-weight:800;letter-spacing:-.02em;}
+    .nav-icon{width:26px;height:26px;border-radius:6px;background:var(--grad);display:flex;align-items:center;justify-content:center;font-size:.62rem;font-weight:900;color:#fff;}
+    .nav-divider{width:1px;height:14px;background:var(--border);margin:0 2px;}
+    .nav-sub{font-size:.78rem;font-weight:500;color:var(--muted);}
+    .nav-cta{font-size:.8rem;font-weight:700;background:var(--grad);color:#fff;padding:8px 20px;border-radius:7px;box-shadow:0 0 18px rgba(0,106,255,.35);transition:opacity .2s;}
+    .nav-cta:hover{opacity:.85;}
+    .hero{padding:80px 5vw 0;text-align:center;position:relative;overflow:hidden;}
+    .hero-glow{position:absolute;top:-160px;left:50%;transform:translateX(-50%);width:900px;height:700px;pointer-events:none;background:radial-gradient(ellipse at 50% 30%,rgba(0,106,255,.19) 0%,rgba(0,106,255,.08) 40%,transparent 68%);animation:breathe 8s ease-in-out infinite alternate;}
+    @keyframes breathe{from{opacity:.75;transform:translateX(-50%) scale(1);}to{opacity:1;transform:translateX(-50%) scale(1.05);}}
+    .hero>*{position:relative;z-index:1;}
+    .hero-pill{display:inline-flex;align-items:center;gap:7px;background:rgba(0,106,255,.1);border:1px solid rgba(0,106,255,.25);border-radius:100px;padding:5px 14px 5px 6px;margin-bottom:24px;font-size:.73rem;font-weight:600;color:#B3D4FF;animation:fadeUp .5s ease both;}
+    .hero-pill-dot{width:20px;height:20px;border-radius:50%;background:var(--grad);display:flex;align-items:center;justify-content:center;font-size:.55rem;color:#fff;}
+    h1{font-size:clamp(2.6rem,6vw,4.6rem);font-weight:800;letter-spacing:-.04em;line-height:1.04;margin-bottom:18px;animation:fadeUp .5s .07s ease both;}
+    .g{background:linear-gradient(90deg,#006AFF,#579DFF);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+    .hero-sub{font-size:1.05rem;color:var(--muted);line-height:1.75;max-width:520px;margin:0 auto 32px;animation:fadeUp .5s .14s ease both;}
+    .hero-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:60px;animation:fadeUp .5s .2s ease both;}
+    .btn-p{display:inline-flex;align-items:center;gap:7px;background:var(--grad);color:#fff;font-family:var(--font);font-weight:700;font-size:.92rem;padding:13px 26px;border-radius:7px;box-shadow:0 4px 26px rgba(0,106,255,.48);transition:opacity .2s,transform .2s;}
+    .btn-p:hover{opacity:.88;transform:translateY(-1px);}
+    .btn-s{display:inline-flex;align-items:center;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);color:var(--text);font-family:var(--font);font-weight:600;font-size:.92rem;padding:13px 26px;border-radius:7px;transition:background .2s;}
+    .btn-s:hover{background:rgba(255,255,255,.09);}
+    .proof{display:flex;justify-content:center;align-items:stretch;flex-wrap:wrap;gap:0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--surface);}
+    .proof-item{text-align:center;padding:28px 32px;border-right:1px solid var(--border);flex:1;min-width:140px;}
+    .proof-item:last-child{border-right:none;}
+    .proof-n{font-size:2.2rem;font-weight:800;letter-spacing:-.05em;line-height:1;background:linear-gradient(90deg,#579DFF,#579DFF);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:6px;}
+    .proof-l{font-size:.74rem;color:var(--muted);line-height:1.4;max-width:100px;margin:0 auto;}
+    @media(max-width:600px){.proof-item{border-right:none;border-bottom:1px solid var(--border);}.proof-item:last-child{border-bottom:none;}}
+    .reasons{max-width:1000px;margin:0 auto;padding:64px 5vw;display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:14px;}
+    .rcard{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:26px;position:relative;overflow:hidden;transition:border-color .25s,transform .25s;}
+    .rcard::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(0,106,255,.5),transparent);opacity:0;transition:opacity .3s;}
+    .rcard:hover{border-color:rgba(0,106,255,.35);transform:translateY(-2px);}
+    .rcard:hover::before{opacity:1;}
+    .rcard-ico{width:38px;height:38px;border-radius:9px;margin-bottom:14px;background:rgba(0,106,255,.1);border:1px solid rgba(0,106,255,.2);display:flex;align-items:center;justify-content:center;font-size:.95rem;}
+    .rcard-t{font-size:.92rem;font-weight:700;letter-spacing:-.015em;margin-bottom:8px;}
+    .rcard-d{font-size:.83rem;color:var(--muted);line-height:1.7;}
+    .form-section{background:var(--surface);border-top:1px solid var(--border);}
+    .form-inner{max-width:840px;margin:0 auto;padding:64px 5vw;display:grid;grid-template-columns:1fr 390px;gap:56px;align-items:start;}
+    @media(max-width:800px){.form-inner{grid-template-columns:1fr;gap:36px;}}
+    .form-left h2{font-size:1.75rem;font-weight:800;letter-spacing:-.035em;line-height:1.15;margin-bottom:12px;}
+    .form-left p{font-size:.88rem;color:var(--muted);line-height:1.7;margin-bottom:22px;}
+    .logos-row{display:flex;gap:7px;flex-wrap:wrap;}
+    .logo-chip{font-size:.7rem;font-weight:700;color:var(--muted);background:var(--card);border:1px solid var(--border);border-radius:6px;padding:4px 10px;}
+    .fcard{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:28px;position:relative;overflow:hidden;}
+    .fcard::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--grad);}
+    .fcard-t{font-size:1.08rem;font-weight:800;letter-spacing:-.025em;margin-bottom:3px;}
+    .fcard-s{font-size:.74rem;color:var(--muted);margin-bottom:20px;}
+    .frow{display:grid;grid-template-columns:1fr 1fr;gap:9px;}
+    .fi{margin-bottom:10px;}
+    .fi label{display:block;font-size:.65rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--dim);margin-bottom:5px;}
+    .fi input,.fi select{width:100%;background:var(--surface);border:1px solid var(--border);border-radius:7px;padding:10px 12px;color:var(--text);font-family:var(--font);font-size:.84rem;outline:none;transition:border-color .2s,box-shadow .2s;-webkit-appearance:none;}
+    .fi input::placeholder{color:#38345A;}
+    .fi input:focus,.fi select:focus{border-color:rgba(0,106,255,.55);box-shadow:0 0 0 3px rgba(0,106,255,.1);}
+    .fi select{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%239490B5' viewBox='0 0 20 20'%3E%3Cpath d='M5 8l5 5 5-5z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;background-size:14px;}
+    .fi select option{background:#0E0D1A;}
+    .btn-submit{width:100%;border:none;cursor:pointer;background:var(--grad);color:#fff;font-family:var(--font);font-weight:700;font-size:.9rem;letter-spacing:-.01em;padding:13px;border-radius:7px;margin-top:4px;box-shadow:0 4px 22px rgba(0,106,255,.44);transition:opacity .2s,transform .2s;}
+    .btn-submit:hover{opacity:.88;transform:translateY(-1px);}
+    .fine{text-align:center;font-size:.65rem;color:var(--dim);margin-top:10px;line-height:1.5;}
+    .fine a{color:var(--muted);text-decoration:underline;}
+    footer{border-top:1px solid var(--border);padding:20px 5vw;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+    .flogo{display:flex;align-items:center;gap:7px;font-size:.84rem;font-weight:800;}
+    .flogo-i{width:22px;height:22px;border-radius:5px;background:var(--grad);display:flex;align-items:center;justify-content:center;font-size:.55rem;font-weight:900;color:#fff;}
+    .flinks{display:flex;gap:18px;flex-wrap:wrap;}
+    .flinks a{font-size:.72rem;color:var(--dim);transition:color .2s;}
+    .flinks a:hover{color:var(--muted);}
+    .fcopy{font-size:.7rem;color:var(--dim);}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-brand">
+    <div class="nav-icon">I</div>
+    incode
+    <div class="nav-divider"></div>
+    <span class="nav-sub">Workforce</span>
+  </div>
+  <a href="#demo" class="nav-cta">Request a demo</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="hero-pill"><span class="hero-pill-dot">✦</span>Gartner® Magic Quadrant™ Leader · Identity Verification 2025</div>
+  <h1>Verify every candidate.<br/>Protect every <span class="g">employee.</span></h1>
+  <p class="hero-sub">Fake candidates and impersonated employees are gaps your ATS and IAM can't close alone. Incode Workforce adds biometric verification at hiring, onboarding, and IT recovery — in under 30 seconds.</p>
+  <div class="hero-btns">
+    <a href="#demo" class="btn-p">Get a demo <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <a href="https://www.incode.com/workforce" target="_blank" class="btn-s">Learn more</a>
+  </div>
+  <div class="proof">
+    <div class="proof-item"><div class="proof-n">50%</div><div class="proof-l">Fewer help desk tickets</div></div>
+    <div class="proof-item"><div class="proof-n">&lt;30s</div><div class="proof-l">Avg verification time</div></div>
+    <div class="proof-item"><div class="proof-n">190+</div><div class="proof-l">Countries supported</div></div>
+    <div class="proof-item"><div class="proof-n">4.1B+</div><div class="proof-l">Identity checks annually</div></div>
+  </div>
+</section>
+
+<div class="reasons">
+  <div class="rcard"><div class="rcard-ico">🎭</div><div class="rcard-t">Stop fraudulent hires</div><div class="rcard-d">Verify candidates with gov ID + selfie inside your ATS. Passive risk signals flag synthetic identities before the first interview.</div></div>
+  <div class="rcard"><div class="rcard-ico">🛡️</div><div class="rcard-t">Secure onboarding & MFA</div><div class="rcard-d">Tie day-zero Okta activation to the verified candidate identity. No temp passwords. No social engineering window at the help desk.</div></div>
+  <div class="rcard"><div class="rcard-ico">⚡</div><div class="rcard-t">Zero friction for employees</div><div class="rcard-d">Enroll once, verify anywhere — just a selfie. Works inside Okta, Entra, Workday, and ServiceNow. No new apps, no extra steps.</div></div>
+</div>
+
+<div class="form-section" id="demo">
+  <div class="form-inner">
+    <div class="form-left">
+      <h2>See it in your environment.</h2>
+      <p>A 30-minute demo scoped to your stack. We'll walk through hiring, onboarding, and IT recovery flows — live.</p>
+      <div class="logos-row">
+        <span class="logo-chip">Okta</span><span class="logo-chip">Entra ID</span><span class="logo-chip">Workday</span><span class="logo-chip">Greenhouse</span><span class="logo-chip">ServiceNow</span><span class="logo-chip">Slack</span>
+      </div>
+    </div>
+    <div class="fcard">
+      <div class="fcard-t">Request a demo</div>
+            <div class="frow">
+        <div class="fi"><label>First</label><input type="text" placeholder="Jane"/></div>
+        <div class="fi"><label>Last</label><input type="text" placeholder="Smith"/></div>
+      </div>
+      <div class="fi"><label>Work Email</label><input type="email" placeholder="jane@company.com"/></div>
+      <div class="fi"><label>Company</label><input type="text" placeholder="Acme Corp"/></div>
+      <div class="fi">
+        <label>Team Size</label>
+        <select><option value="" disabled selected>Select…</option><option>500–1,000</option><option>1,000–5,000</option><option>5,000–20,000</option><option>20,000+</option></select>
+      </div>
+      <button class="btn-submit" onclick="go(this)">Request a demo →</button>
+      <p class="fine">No spam. See our <a href="https://www.incode.com/privacy" target="_blank">Privacy Policy</a>.</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="flogo"><div class="flogo-i">I</div>incode · Workforce</div>
+  <div class="flinks"><a href="https://www.incode.com/workforce" target="_blank">Product</a><a href="https://workforce.developer.incode.com" target="_blank">Docs</a><a href="https://trust.incode.com" target="_blank">Trust Center</a><a href="https://www.incode.com/privacy" target="_blank">Privacy</a></div>
+  <div class="fcopy">© 2026 Incode Technologies, Inc.</div>
+</footer>
+
+<script>
+function go(btn){
+  const card=btn.closest('.fcard');
+  const email=card.querySelector('input[type="email"]');
+  if(!email.value.includes('@')){email.style.borderColor='rgba(239,68,68,.6)';email.focus();return;}
+  btn.textContent='Sending…';btn.style.opacity='.7';
+  setTimeout(()=>{
+    btn.textContent='✓ Request received — we\'ll be in touch soon';
+    btn.style.background='linear-gradient(135deg,#059669,#34D399)';
+    btn.style.boxShadow='0 4px 20px rgba(5,150,105,.4)';
+    btn.style.opacity='1';
+    card.querySelectorAll('input,select').forEach(i=>i.disabled=true);
+  },800);
+}
+</script>
+</body>
+</html>

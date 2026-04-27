@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Partner Program | Incode</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rethink+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#006AFF;--bl:rgba(0,106,255,.08);--ink:#0D0D0D;--soft:#505050;--muted:#909090;--w:#fff;--surf:#F7F7F8;--bdr:#EBEBEB;--rb:9px;--rc:14px;--rt:100px;--f:'Rethink Sans',sans-serif;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:var(--f);background:var(--w);color:var(--ink);-webkit-font-smoothing:antialiased;}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.97);backdrop-filter:blur(14px);border-bottom:1px solid var(--bdr);height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 56px;}
+.logo{font-size:18px;font-weight:800;letter-spacing:-.5px;color:var(--ink);text-decoration:none;}
+.nav-right{display:flex;gap:10px;align-items:center;}
+.nav-link{font-size:13px;font-weight:500;color:var(--soft);background:none;border:none;cursor:pointer;font-family:var(--f);padding:8px 14px;border-radius:var(--rb);transition:background .15s;}
+.nav-link:hover{background:var(--surf);}
+.nav-btn{padding:9px 22px;background:var(--blue);color:#fff;border:none;border-radius:var(--rb);font-size:13px;font-weight:600;cursor:pointer;font-family:var(--f);}
+
+/* HERO */
+.hero{background:#FAFAF8;border-bottom:1px solid var(--bdr);padding:96px 56px 80px;}
+.hero-inner{max-width:1080px;margin:0 auto;}
+.hero-eyebrow{font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--blue);margin-bottom:20px;}
+.hero h1{font-size:clamp(36px,5vw,60px);font-weight:800;letter-spacing:-2px;line-height:1.05;color:var(--ink);margin-bottom:20px;max-width:780px;}
+.hero h1 em{color:var(--blue);font-style:normal;}
+.hero-sub{font-size:17px;line-height:1.8;color:var(--soft);max-width:540px;margin-bottom:36px;}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap;}
+.btn-dark{padding:13px 26px;background:var(--ink);color:#fff;border:none;border-radius:var(--rb);font-size:14px;font-weight:600;cursor:pointer;font-family:var(--f);}
+.btn-dark:hover{opacity:.85;}
+.btn-outline{padding:13px 26px;background:transparent;color:var(--ink);border:1.5px solid var(--bdr);border-radius:var(--rb);font-size:14px;font-weight:500;cursor:pointer;font-family:var(--f);}
+.btn-outline:hover{border-color:var(--ink);}
+
+/* STATS STRIP */
+.stats-strip{border-bottom:1px solid var(--bdr);background:var(--w);padding:36px 56px;}
+.stats-inner{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:0;}
+.stat-item{padding:0 32px;border-right:1px solid var(--bdr);text-align:center;}
+.stat-item:first-child{padding-left:0;text-align:left;}
+.stat-item:last-child{border-right:none;}
+.stat-num{font-size:32px;font-weight:800;letter-spacing:-1px;color:var(--ink);line-height:1;}
+.stat-num em{color:var(--blue);font-style:normal;}
+.stat-label{font-size:13px;color:var(--muted);margin-top:6px;line-height:1.5;}
+
+/* VALUE — WHY PARTNER */
+.value-section{background:#0A0A0A;padding:88px 56px;}
+.value-inner{max-width:1080px;margin:0 auto;}
+.value-eyebrow{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:16px;}
+.value-top h2{font-size:clamp(28px,4vw,46px);font-weight:800;letter-spacing:-1.2px;line-height:1.1;color:#fff;max-width:640px;margin-bottom:14px;}
+.value-top h2 em{color:var(--blue);font-style:normal;}
+.value-top p{font-size:15px;color:rgba(255,255,255,.45);max-width:560px;line-height:1.75;margin-bottom:60px;}
+.benefits-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.benefit{background:#141414;border:1px solid #1E1E1E;border-radius:12px;padding:22px;}
+.benefit-icon{width:36px;height:36px;border-radius:9px;background:#1C1C1C;display:flex;align-items:center;justify-content:center;margin-bottom:12px;}
+.benefit-icon svg{width:16px;height:16px;stroke:var(--blue);fill:none;}
+.benefit h4{font-size:13px;font-weight:700;color:#fff;margin-bottom:5px;}
+.benefit p{font-size:12px;color:rgba(255,255,255,.3);line-height:1.65;}
+
+/* PARTNER TYPES */
+.types-section{padding:88px 56px;background:var(--w);border-bottom:1px solid var(--bdr);}
+.types-inner{max-width:1080px;margin:0 auto;}
+.section-eyebrow{font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--blue);margin-bottom:14px;}
+.section-title{font-size:clamp(24px,3vw,36px);font-weight:800;letter-spacing:-.8px;margin-bottom:10px;}
+.section-sub{font-size:15px;color:var(--soft);max-width:500px;line-height:1.7;margin-bottom:48px;}
+.types-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.type-card{border:1.5px solid var(--bdr);border-radius:var(--rc);padding:28px;display:flex;flex-direction:column;gap:16px;transition:border-color .18s,box-shadow .18s;}
+.type-card:hover{border-color:rgba(0,106,255,.3);box-shadow:0 4px 20px rgba(0,106,255,.07);}
+.type-icon{width:44px;height:44px;border-radius:11px;background:var(--bl);display:flex;align-items:center;justify-content:center;}
+.type-icon svg{width:20px;height:20px;stroke:var(--blue);fill:none;}
+.type-label{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:2px;}
+.type-name{font-size:18px;font-weight:800;letter-spacing:-.4px;color:var(--ink);}
+.type-icp{font-size:12px;color:var(--blue);font-weight:600;margin-bottom:2px;}
+.type-desc{font-size:13px;color:var(--soft);line-height:1.7;flex:1;}
+.btn-type{margin-top:4px;padding:10px 20px;background:var(--ink);color:#fff;border:none;border-radius:var(--rb);font-size:13px;font-weight:600;cursor:pointer;font-family:var(--f);align-self:flex-start;}
+.btn-type:hover{opacity:.85;}
+
+/* QUOTES */
+.quotes-section{background:#F7F7F5;border-top:1px solid var(--bdr);border-bottom:1px solid var(--bdr);padding:60px 56px;}
+.quotes-inner{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
+.quote-card{background:var(--w);border:1.5px solid var(--bdr);border-radius:var(--rc);padding:28px;display:flex;flex-direction:column;justify-content:space-between;}
+.quote-text{font-size:14px;color:var(--soft);line-height:1.8;font-style:italic;margin-bottom:20px;}
+.quote-attr{display:flex;align-items:center;gap:12px;}
+.q-logo{width:32px;height:32px;border-radius:8px;background:var(--surf);border:1px solid var(--bdr);display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0;}
+.q-logo img{width:20px;height:20px;object-fit:contain;}
+.q-logo .qi{font-size:10px;font-weight:800;color:var(--muted);display:none;}
+.q-who{font-size:12px;font-weight:700;color:var(--ink);line-height:1.4;}
+.q-title{font-size:11px;color:var(--muted);}
+
+/* PARTNER GRID */
+.partners-section{padding:80px 56px;background:var(--w);}
+.partners-inner{max-width:1080px;margin:0 auto;}
+.partners-header{text-align:center;margin-bottom:48px;}
+.partners-header h2{font-size:clamp(22px,3vw,32px);font-weight:800;letter-spacing:-.6px;margin-bottom:8px;}
+.partners-header p{font-size:15px;color:var(--muted);}
+.partner-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;}
+.partner-card{border:1.5px solid var(--bdr);border-radius:var(--rc);padding:20px 16px;display:flex;flex-direction:column;align-items:center;gap:10px;text-decoration:none;transition:border-color .18s,box-shadow .18s;background:var(--w);}
+.partner-card:hover{border-color:rgba(0,106,255,.3);box-shadow:0 2px 14px rgba(0,106,255,.06);}
+.partner-card-logo{height:32px;display:flex;align-items:center;justify-content:center;}
+.partner-card-logo img{max-height:24px;max-width:90px;object-fit:contain;filter:grayscale(1);opacity:.6;transition:filter .2s,opacity .2s;}
+.partner-card:hover .partner-card-logo img{filter:none;opacity:1;}
+.partner-card-fallback{width:36px;height:36px;border-radius:8px;display:none;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:#fff;}
+.partner-card-name{font-size:11px;font-weight:600;color:var(--soft);text-align:center;line-height:1.3;}
+
+/* JOIN */
+.join-section{background:#0A0A0A;padding:80px 56px;}
+.join-inner{max-width:1080px;margin:0 auto;}
+.join-header{text-align:center;margin-bottom:48px;}
+.join-header h2{font-size:clamp(24px,3vw,40px);font-weight:800;letter-spacing:-.8px;color:#fff;margin-bottom:12px;}
+.join-header p{font-size:15px;color:rgba(255,255,255,.4);max-width:500px;margin:0 auto;line-height:1.7;}
+.join-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:40px;}
+.join-card{background:#141414;border:1px solid #1E1E1E;border-radius:var(--rc);padding:24px;}
+.join-card-icon{width:38px;height:38px;border-radius:10px;background:rgba(0,106,255,.12);display:flex;align-items:center;justify-content:center;margin-bottom:12px;}
+.join-card-icon svg{width:18px;height:18px;stroke:var(--blue);fill:none;}
+.join-card h4{font-size:13px;font-weight:700;color:#fff;margin-bottom:5px;}
+.join-card p{font-size:12px;color:rgba(255,255,255,.3);line-height:1.65;}
+.join-ctas{display:flex;gap:12px;justify-content:center;}
+.btn-p{padding:13px 28px;background:var(--blue);color:#fff;border:none;border-radius:var(--rb);font-size:14px;font-weight:600;cursor:pointer;font-family:var(--f);}
+.btn-p:hover{opacity:.88;}
+.btn-ghost{padding:13px 28px;background:transparent;color:rgba(255,255,255,.6);border:1.5px solid rgba(255,255,255,.15);border-radius:var(--rb);font-size:14px;font-weight:500;cursor:pointer;font-family:var(--f);}
+.btn-ghost:hover{border-color:rgba(255,255,255,.4);color:#fff;}
+
+@media(max-width:1000px){.types-grid{grid-template-columns:1fr 1fr;}.partner-grid{grid-template-columns:repeat(4,1fr);}.stats-inner{grid-template-columns:repeat(2,1fr);gap:24px;}.stats-inner .stat-item{border-right:none;text-align:left;padding-left:0;}.benefits-grid{grid-template-columns:1fr 1fr;}.quotes-inner{grid-template-columns:1fr;}.join-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:700px){.types-grid{grid-template-columns:1fr;}.partner-grid{grid-template-columns:repeat(3,1fr);}.join-grid{grid-template-columns:1fr;}.nav,.hero,.stats-strip,.value-section,.types-section,.quotes-section,.partners-section,.join-section{padding-left:24px;padding-right:24px;}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="logo" href="#">incode</a>
+  <div class="nav-right">
+    <button class="nav-link" onclick="document.getElementById('partners-section').scrollIntoView({behavior:'smooth'})">Find a partner</button>
+    <button class="nav-btn" onclick="document.getElementById('join-section').scrollIntoView({behavior:'smooth'})">Become a partner</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Partner Program</div>
+    <h1>Build more.<br><em>Grow faster.</em><br>Partner with Incode.</h1>
+    <p class="hero-sub">Join the ecosystem powering verified identity at scale. Whether you refer, resell, or embed — we have a partner track designed around your business model.</p>
+    <div class="hero-ctas">
+      <button class="btn-dark" onclick="document.getElementById('join-section').scrollIntoView({behavior:'smooth'})">Become a partner</button>
+      <button class="btn-outline" onclick="document.getElementById('partners-section').scrollIntoView({behavior:'smooth'})">Find a partner</button>
+    </div>
+  </div>
+</section>
+
+<!-- STATS STRIP -->
+<div class="stats-strip">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <div class="stat-num"><em>500M+</em></div>
+      <div class="stat-label">Verifications processed<br>through partner platforms</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num"><em>50+</em></div>
+      <div class="stat-label">Technology and channel<br>partners worldwide</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num"><em>30+</em></div>
+      <div class="stat-label">Countries where Incode<br>is deployed through partners</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num"><em>8 of 10</em></div>
+      <div class="stat-label">Largest U.S. banks trust<br>Incode identity verification</div>
+    </div>
+  </div>
+</div>
+
+<!-- WHY PARTNER -->
+<section class="value-section">
+  <div class="value-inner">
+    <div class="value-eyebrow">Why partner with Incode</div>
+    <div class="value-top">
+      <h2>Identity verification is becoming<br>a requirement. <em>We make it yours.</em></h2>
+      <p>Identity is the most targeted attack surface in the enterprise. Every account takeover, synthetic identity, and fraudulent onboarding starts with a failure to verify who is really there. Incode partners are the companies fixing that — embedding verified, biometric-grade identity directly into the products their customers depend on.</p>
+    </div>
+    <div class="benefits-grid">
+      <div class="benefit"><div class="benefit-icon"><svg viewBox="0 0 18 18"><path d="M9 2l2 5h5l-4 3 1.5 5L9 12l-4.5 3L6 10 2 7h5z" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h4>Co-sell support</h4><p>Deal registration, joint account mapping, and dedicated partner success resources.</p></div>
+      <div class="benefit"><div class="benefit-icon"><svg viewBox="0 0 18 18"><circle cx="9" cy="9" r="7" stroke-width="1.3"/><path d="M6 9l2 2 4-4" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h4>Deal registration & protection</h4><p>Register deals to protect your pipeline and ensure fair compensation on every opportunity you bring.</p></div>
+      <div class="benefit"><div class="benefit-icon"><svg viewBox="0 0 18 18"><rect x="2" y="3" width="14" height="12" rx="2" stroke-width="1.3"/><path d="M6 7h6M6 10h4" stroke-width="1.3" stroke-linecap="round"/></svg></div><h4>Technical enablement</h4><p>Sandbox access, integration docs, and dedicated technical support for your team.</p></div>
+      <div class="benefit"><div class="benefit-icon"><svg viewBox="0 0 18 18"><path d="M3 9c0-3.3 2.7-6 6-6s6 2.7 6 6-2.7 6-6 6" stroke-width="1.3" stroke-linecap="round"/><path d="M9 6v3l2 2" stroke-width="1.3" stroke-linecap="round"/></svg></div><h4>Co-marketing</h4><p>Joint press releases, case studies, events, and demand generation campaigns.</p></div>
+      <div class="benefit"><div class="benefit-icon"><svg viewBox="0 0 18 18"><path d="M5 9h8M5 12h5M5 6h8" stroke-width="1.3" stroke-linecap="round"/><rect x="2" y="2" width="14" height="14" rx="2" stroke-width="1.3"/></svg></div><h4>Preferred pricing</h4><p>Partner-tier pricing designed to protect your margin and win competitive deals.</p></div>
+      <div class="benefit"><div class="benefit-icon"><svg viewBox="0 0 18 18"><path d="M9 2v4M9 12v4M2 9h4M12 9h4" stroke-width="1.3" stroke-linecap="round"/><circle cx="9" cy="9" r="3" stroke-width="1.3"/></svg></div><h4>Roadmap access</h4><p>Early product previews, beta features, and direct feedback lines to Incode engineering.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNER TYPES -->
+<section class="types-section" id="types-section">
+  <div class="types-inner">
+    <div class="section-eyebrow">How we work together</div>
+    <h2 class="section-title">Find your partner track</h2>
+    <p class="section-sub">Three ways to build a business with Incode — each designed for a different model, with clear commercials and dedicated support.</p>
+    <div class="types-grid">
+
+      <div class="type-card">
+        <div class="type-icon"><svg viewBox="0 0 20 20"><rect x="3" y="3" width="6" height="6" rx="1.5" stroke-width="1.4"/><rect x="11" y="3" width="6" height="6" rx="1.5" stroke-width="1.4"/><rect x="3" y="11" width="6" height="6" rx="1.5" stroke-width="1.4"/><path d="M14 11v6M11 14h6" stroke-width="1.4" stroke-linecap="round"/></svg></div>
+        <div>
+          <div class="type-label">Program track</div>
+          <div class="type-name">OEM & Embed</div>
+        </div>
+        <div class="type-icp">For platforms and products that want to embed verified identity as a native feature</div>
+        <div class="type-desc">Embed Incode biometric verification as a core component of your product. Your customers experience your brand — Incode powers the identity engine underneath. Preferred pricing, dedicated technical support, and co-development available for qualified OEM partners.</div>
+        <button class="btn-type" onclick="document.getElementById('join-section').scrollIntoView({behavior:'smooth'})">Apply now</button>
+      </div>
+
+<div class="type-card">
+        <div class="type-icon"><svg viewBox="0 0 20 20"><path d="M3 10h14M10 3v14" stroke-width="1.4" stroke-linecap="round"/><circle cx="10" cy="10" r="8" stroke-width="1.4"/></svg></div>
+        <div>
+          <div class="type-label">Program track</div>
+          <div class="type-name">Reseller</div>
+        </div>
+        <div class="type-icp">For SIs, VARs, and channel partners who own customer relationships</div>
+        <div class="type-desc">Resell Incode to your enterprise customers as a standalone solution or bundled with your implementation and managed services. Access co-sell support, deal registration, preferred pricing, and dedicated partner success resources to close faster and protect your margin.</div>
+        <button class="btn-type" onclick="document.getElementById('join-section').scrollIntoView({behavior:'smooth'})">Apply now</button>
+      </div>
+
+      <div class="type-card">
+        <div class="type-icon"><svg viewBox="0 0 20 20"><path d="M10 3l2.5 5 5.5.8-4 3.9.9 5.3L10 15.5l-4.9 2.5.9-5.3-4-3.9 5.5-.8z" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div>
+          <div class="type-label">Program track</div>
+          <div class="type-name">Referral</div>
+        </div>
+        <div class="type-icp">For consultants, advisors, and firms with strong enterprise relationships</div>
+        <div class="type-desc">Refer qualified opportunities to Incode and earn a fee on every deal that closes. No reselling required — we handle the sale, you get rewarded for the introduction. Ideal for compliance consultancies, fraud advisories, and specialist firms who want to add value without taking on a vendor relationship.</div>
+        <button class="btn-type" onclick="document.getElementById('join-section').scrollIntoView({behavior:'smooth'})">Apply now</button>
+      </div>
+
+          </div>
+  </div>
+</section>
+
+<!-- QUOTES -->
+<div class="quotes-section">
+  <div class="quotes-inner">
+    <div class="quote-card">
+      <div class="quote-text">"This new partnership aids our Government customers by quickly delivering identity verification solutions and ultimately facilitating public trust through ensuring the secure management of data."</div>
+      <div class="quote-attr">
+        <div class="q-logo"><img src="https://logo.clearbit.com/carahsoft.com" alt="Carahsoft" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="qi">C</span></div>
+        <div>
+          <div class="q-who">Michael Shrader</div>
+          <div class="q-title">VP Innovative & Intelligence Solutions, Carahsoft</div>
+        </div>
+      </div>
+    </div>
+    <div class="quote-card">
+      <div class="quote-text">"By integrating Incode's identity verification technology into the Ascend Platform, we're empowering organizations to make faster, smarter decisions while tailoring their fraud and risk strategies with unprecedented agility and precision."</div>
+      <div class="quote-attr">
+        <div class="q-logo"><img src="https://logo.clearbit.com/experian.com" alt="Experian" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="qi">E</span></div>
+        <div>
+          <div class="q-who">Marika Vilen</div>
+          <div class="q-title">SVP Global Partnerships & Commercialization, Experian</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PARTNER GRID -->
+<section class="partners-section" id="partners-section">
+  <div class="partners-inner">
+    <div class="partners-header">
+      <h2>Our partners</h2>
+      <p>Companies that build, sell, and deliver with Incode around the world.</p>
+    </div>
+    <div class="partner-grid">
+
+      <!-- OEM (in specified order) -->
+      <a class="partner-card" href="https://www.experian.com" target="_blank" rel="noopener">
+        <div class="partner-card-logo"><img src="https://logo.clearbit.com/experian.com" alt="Experian" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="partner-card-fallback" style="background:#D62B2B">EX</div></div>
+        <div class="partner-card-name">Experian</div>
+      </a>
+      <a class="partner-card" href="https://www.equifax.com" target="_blank" rel="noopener">
+        <div class="partner-card-logo"><img src="https://logo.clearbit.com/equifax.com" alt="Equifax" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="partner-card-fallback" style="background:#E31837">EQ</div></div>
+        <div class="partner-card-name">Equifax</div>
+      </a>
+      <a class="partner-card" href="https://www.transunion.com" target="_blank" rel="noopener">
+        <div class="partner-card-logo"><img src="https://logo.clearbit.com/transunion.com" alt="TransUnion" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="partner-card-fallback" style="background:#00538B">TU</div></div>
+        <div class="partner-card-name">TransUnion</div>
+      </a>
+      <a class="partner-card" href="https://www.interac.ca" target="_blank" rel="noopener">
+        <div class="partner-card-logo"><img src="https://logo.clearbit.com/interac.ca" alt="Interac" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="partner-card-fallback" style="background:#FFCD00;color:#111">IN</div></div>
+        <div class="partner-card-name">Interac</div>
+      </a>
+      <a class="partner-card" href="https://www.alloy.com" target="_blank" rel="noopener">
+        <div class="partner-card-logo"><img src="https://logo.clearbit.com/alloy.com" alt="Alloy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="partner-card-fallback" style="background:#7C3AED">AL</div></div>
+        <div class="partner-card-name">Alloy</div>
+      </a>
+      <a class="partner-card" href="https://www.geocomply.com" target="_blank" rel="noopener">
+        <div class="partner-card-logo"><img src="https://logo.clearbit.com/geocomply.com" alt="GeoComply" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="partner-card-fallback" style="background:#0D6E3A">GC</div></div>
+        <div class="partner-card-name">GeoComply</div>
+      </a>
+      <a class="partner-card" href="https://www.sardine.ai" target="_blank" rel="noopener">
+        <div class="partner-card-logo"><img src="https://logo.clearbit.com/sardine.ai" alt="Sardine" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="partner-card-fallback" style="background:#0EA5E9">SA</div></div>
+        <div class="partner-card-name">Sardine</div>
+      </a>
+      <a class="partner-card" href="https://www.onefootprint.com" target="_blank" rel="noopener">
+        <div class="partner-card-logo"><img src="https://logo.clearbit.com/onefootprint.com" alt="Footprint" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="partner-card-fallback" style="background:#3B82F6">FP</div></div>
+        <div class="partner-card-name">Footprint</div>
+      </a>
+      <a class="partner-card" href="https://www.iddataweb.com" target="_blank" rel="noopener">
+        <div class="partner-card-logo"><img src="https://logo.clearbit.com/iddataweb.com" alt="ID DataWeb" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="partner-card-fallback" style="background:#1D4ED8">ID</div></div>
+        <div class="partner-card-name">ID DataWeb</div>
+      </a>
+      <a class="partner-card" href="https://www.tungstenautomation.com" target="_blank" rel="noopener">
+        <div class="partner-card-logo"><img src="https://logo.clearbit.com/tungstenautomation.com" alt="Tungsten" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="partner-card-fallback" style="background:#374151">TW</div></div>
+        <div class="partner-card-name">Tungsten</div>
+      </a>
+      <a class="partner-card" href="https://www.snappt.com" target="_blank" rel="noopener">
+        <div class="partner-card-logo"><img src="https://logo.clearbit.com/snappt.com" alt="Snappt" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="partner-card-fallback" style="background:#6366F1">SN</div></div>
+        <div class="partner-card-name">Snappt</div>
+      </a>
+      <a class="partner-card" href="https://www.aristotleinc.com" target="_blank" rel="noopener">
+        <div class="partner-card-logo"><img src="https://logo.clearbit.com/aristotleinc.com" alt="Aristotle" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="partner-card-fallback" style="background:#1C4587">AR</div></div>
+        <div class="partner-card-name">Aristotle</div>
+      </a>
+
+      <!-- Channel partners -->
+      <a class="partner-card" href="https://www.carahsoft.com" target="_blank" rel="noopener">
+        <div class="partner-card-logo"><img src="https://logo.clearbit.com/carahsoft.com" alt="Carahsoft" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="partner-card-fallback" style="background:#0033A0">CA</div></div>
+        <div class="partner-card-name">Carahsoft</div>
+      </a>
+      <a class="partner-card" href="https://www.guidepointsecurity.com" target="_blank" rel="noopener">
+        <div class="partner-card-logo"><img src="https://logo.clearbit.com/guidepointsecurity.com" alt="Guidepoint Security" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="partner-card-fallback" style="background:#C8102E">GS</div></div>
+        <div class="partner-card-name">Guidepoint Security</div>
+      </a>
+      <a class="partner-card" href="https://www.shi.com" target="_blank" rel="noopener">
+        <div class="partner-card-logo"><img src="https://logo.clearbit.com/shi.com" alt="SHI" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="partner-card-fallback" style="background:#003DA5">SH</div></div>
+        <div class="partner-card-name">SHI International</div>
+      </a>
+      <a class="partner-card" href="https://www.optiv.com" target="_blank" rel="noopener">
+        <div class="partner-card-logo"><img src="https://logo.clearbit.com/optiv.com" alt="Optiv" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="partner-card-fallback" style="background:#E4002B">OP</div></div>
+        <div class="partner-card-name">Optiv</div>
+      </a>
+      <a class="partner-card" href="https://www.ahead.com" target="_blank" rel="noopener">
+        <div class="partner-card-logo"><img src="https://logo.clearbit.com/ahead.com" alt="Ahead" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="partner-card-fallback" style="background:#1D3557">AH</div></div>
+        <div class="partner-card-name">Ahead</div>
+      </a>
+      <a class="partner-card" href="https://www.alchemytechgroup.com" target="_blank" rel="noopener">
+        <div class="partner-card-logo"><img src="https://logo.clearbit.com/alchemytechgroup.com" alt="Alchemy Technology Group" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="partner-card-fallback" style="background:#2D2D2D">AC</div></div>
+        <div class="partner-card-name">Alchemy Technology Group</div>
+      </a>
+      <a class="partner-card" href="https://www.nttdata.com" target="_blank" rel="noopener">
+        <div class="partner-card-logo"><img src="https://logo.clearbit.com/nttdata.com" alt="NTT Data" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="partner-card-fallback" style="background:#009BDE">NT</div></div>
+        <div class="partner-card-name">NTT Data</div>
+      </a>
+      <a class="partner-card" href="https://www.tec360.com" target="_blank" rel="noopener">
+        <div class="partner-card-logo"><img src="https://logo.clearbit.com/tec360.com" alt="Tec360" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="partner-card-fallback" style="background:#005A9C">T3</div></div>
+        <div class="partner-card-name">Tec360</div>
+      </a>
+      <a class="partner-card" href="https://www.pingidentity.com" target="_blank" rel="noopener">
+        <div class="partner-card-logo"><img src="https://logo.clearbit.com/pingidentity.com" alt="Ping Identity" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="partner-card-fallback" style="background:#ED2226">PI</div></div>
+        <div class="partner-card-name">Ping Identity</div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- JOIN -->
+<section class="join-section" id="join-section">
+  <div class="join-inner">
+    <div class="join-header">
+      <h2>Ready to partner with Incode?</h2>
+      <p>Join the ecosystem powering verified identity at scale. We have a track built for your business model.</p>
+    </div>
+    <div class="join-grid">
+      <div class="join-card">
+        <div class="join-card-icon"><svg viewBox="0 0 20 20"><path d="M10 3l2.5 5 5.5.8-4 3.9.9 5.3L10 15.5l-4.9 2.5.9-5.3-4-3.9 5.5-.8z" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h4>Referral & co-sell program</h4>
+        <p>Earn referral fees, register deals, and co-sell with the Incode sales team to close faster and protect your margin.</p>
+      </div>
+      <div class="join-card">
+        <div class="join-card-icon"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="3" stroke-width="1.4"/><path d="M10 3v2M10 15v2M3 10h2M15 10h2M5.2 5.2l1.4 1.4M13.4 13.4l1.4 1.4M5.2 14.8l1.4-1.4M13.4 6.6l1.4-1.4" stroke-width="1.4" stroke-linecap="round"/></svg></div>
+        <h4>Technical enablement</h4>
+        <p>Sandbox environments, integration documentation, and dedicated technical support so your team can deploy with confidence.</p>
+      </div>
+      <div class="join-card">
+        <div class="join-card-icon"><svg viewBox="0 0 20 20"><path d="M3 7h14M3 10h10M3 13h7" stroke-width="1.4" stroke-linecap="round"/><rect x="2" y="3" width="16" height="14" rx="2" stroke-width="1.4"/></svg></div>
+        <h4>Co-marketing & visibility</h4>
+        <p>Partner directory listing, joint press releases, case studies, and demand generation campaigns to your shared audience.</p>
+      </div>
+    </div>
+    <div class="join-ctas">
+      <button class="btn-p">Become a partner</button>
+      <button class="btn-ghost">Contact the partnerships team</button>
+    </div>
+  </div>
+</section>
+
+<script>
+document.querySelectorAll('img').forEach(img => img.addEventListener('error', function() {
+  this.style.display = 'none';
+  const fb = this.nextElementSibling;
+  if (fb) fb.style.display = 'flex';
+}));
+</script>
+</body>
+</html>
